@@ -25,9 +25,11 @@ call minpac#add('xolox/vim-misc')
 call minpac#add('xolox/vim-notes')
 call minpac#add('neoclide/coc.nvim')
 call minpac#add('machakann/vim-sandwich')
+call minpac#add('mattia72/vim-delphi')
 " Load the plugins right now. (optional)
 "packloadall
 
+"
 "}}}
 
 "{{{ CoC
