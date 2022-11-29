@@ -74,6 +74,8 @@ plugins=(
 	git
 	z
 	zsh-nvm
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
