@@ -23,7 +23,6 @@ vim.g['vimtex_view_general_viewer'] = 'okular'
 vim.g['vimtex_view_general_options'] = '--unique file:@pdf\\#src:@line@tex'
 vim.g['vimtex_compiler_latexmk'] = {
   options = {
-    '-pdf',
     '-verbose',
     '-file-line-error',
     '-synctex=1',
@@ -31,8 +30,28 @@ vim.g['vimtex_compiler_latexmk'] = {
     '-shell-escape'
   }
 }
+-- vim.g['vimtex_quickfix_enabled'] = false
 
 vim.g['catppuccin_flavour'] = 'mocha'
 require('catppuccin').setup()
 
 vim.cmd [[colorscheme catppuccin]]
+
+local lsp = require('lsp-zero')
+
+lsp.preset('recommended')
+lsp.set_preferences({
+  suggest_lsp_servers = false
+})
+
+lsp.setup_nvim_cmp{
+  sources = {
+    { name = 'omni' },
+    { name = 'buffer' },
+    { name = 'path' },
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' }
+  }
+}
+
+lsp.setup()
