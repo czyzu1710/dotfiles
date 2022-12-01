@@ -7,6 +7,7 @@ local keys = require("keys")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
+local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 -- Widget and layout library
 local wibox = require("wibox")
 -- Theme handling library
@@ -47,7 +48,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -185,6 +186,7 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
+            volume_widget(),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
