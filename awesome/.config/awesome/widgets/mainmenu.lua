@@ -3,7 +3,7 @@ local awful = require('awful')
 local beautiful = require('beautiful')
 local hotkeys_popup = require("awful.hotkeys_popup")
 
-local terminal = "kitty"
+local terminal = "wezterm"
 local editor = "nvim" or os.getenv("EDITOR") or "nano"
 local editor_cmd = terminal .. " -e " .. editor
 
