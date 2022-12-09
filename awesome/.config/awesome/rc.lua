@@ -7,7 +7,6 @@ local keys = require("keys")
 local gears = require("gears")
 local awful = require("awful")
 require("awful.autofocus")
-local volume_widget = require("awesome-wm-widgets.volume-widget.volume")
 -- Widget and layout library
 local wibox = require("wibox")
 -- Theme handling library
@@ -186,7 +185,6 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            volume_widget(),
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
