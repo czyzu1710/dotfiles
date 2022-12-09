@@ -1,7 +1,6 @@
 return require('packer').startup(function()
    use 'wbthomason/packer.nvim'
    use 'vimwiki/vimwiki'
-   use 'lervag/vimtex'
    use 'L3MON4D3/LuaSnip'
    use 'rafamadriz/friendly-snippets'
    use {

@@ -19,18 +19,6 @@ opt.colorcolumn = '120'
 
 opt.number = true
 opt.relativenumber = true
-vim.g['vimtex_view_general_viewer'] = 'okular'
-vim.g['vimtex_view_general_options'] = '--unique file:@pdf\\#src:@line@tex'
-vim.g['vimtex_compiler_latexmk'] = {
-  options = {
-    '-verbose',
-    '-file-line-error',
-    '-synctex=1',
-    '-interaction=nonstopmode',
-    '-shell-escape'
-  }
-}
--- vim.g['vimtex_quickfix_enabled'] = false
 
 vim.g['catppuccin_flavour'] = 'mocha'
 require('catppuccin').setup()
