@@ -53,3 +53,4 @@ return require('packer').startup(function()
  end)
 
   use { 'mickael-menu/zk-nvim' }
+  use { 'nvim-tree/nvim-web-devicons' }
