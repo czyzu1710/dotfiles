@@ -1,9 +1,6 @@
 return require('packer').startup(function()
-   use 'wbthomason/packer.nvim'
-   use 'vimwiki/vimwiki'
-   use 'L3MON4D3/LuaSnip'
-   use 'rafamadriz/friendly-snippets'
-   use {
+  use 'wbthomason/packer.nvim'
+  use {
     'ms-jpq/chadtree',
     branch = 'chad',
     run = {
@@ -11,15 +8,15 @@ return require('packer').startup(function()
       'python3 -m chadtree deps'
     }
   }
-  use {'catppuccin/nvim', as = 'catppucin'}
+  use { 'catppuccin/nvim', as = 'catppucin' }
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
-    requires = { {'nvim-lua/plenary.nvim'}},
+    requires = { { 'nvim-lua/plenary.nvim' } },
   }
   use {
-  'nvim-treesitter/nvim-treesitter',
-  run = ':TSUpdate'
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
   }
   use {
     'Pocco81/true-zen.nvim'
@@ -29,28 +26,27 @@ return require('packer').startup(function()
   }
 
   use {
-  'VonHeikemen/lsp-zero.nvim',
-  requires = {
-        -- LSP Support
-      {'neovim/nvim-lspconfig'},
-      {'williamboman/mason.nvim'},
-      {'williamboman/mason-lspconfig.nvim'},
+    'VonHeikemen/lsp-zero.nvim',
+    requires = {
+      -- LSP Support
+      { 'neovim/nvim-lspconfig' },
+      { 'williamboman/mason.nvim' },
+      { 'williamboman/mason-lspconfig.nvim' },
 
       -- Autocompletion
-      {'hrsh7th/nvim-cmp'},
-      {'hrsh7th/cmp-buffer'},
-      {'hrsh7th/cmp-omni'},
-      {'hrsh7th/cmp-path'},
-      {'saadparwaiz1/cmp_luasnip'},
-      {'hrsh7th/cmp-nvim-lsp'},
-      {'hrsh7th/cmp-nvim-lua'},
+      { 'hrsh7th/nvim-cmp' },
+      { 'hrsh7th/cmp-buffer' },
+      { 'hrsh7th/cmp-omni' },
+      { 'hrsh7th/cmp-path' },
+      { 'saadparwaiz1/cmp_luasnip' },
+      { 'hrsh7th/cmp-nvim-lsp' },
+      { 'hrsh7th/cmp-nvim-lua' },
 
       -- Snippets
-      {'L3MON4D3/LuaSnip'},
-      {'rafamadriz/friendly-snippets'},
+      { 'L3MON4D3/LuaSnip' },
+      { 'rafamadriz/friendly-snippets' },
     }
   }
- end)
 
   use { 'mickael-menu/zk-nvim' }
 
@@ -60,3 +56,4 @@ return require('packer').startup(function()
       { 'nvim-tree/nvim-web-devicons' },
     },
   }
+end)
