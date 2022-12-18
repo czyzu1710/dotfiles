@@ -6,3 +6,4 @@ require('treesitter_conf')
 require('true-zen_conf')
 require('telescope_conf')
 
+require("zk_conf")
