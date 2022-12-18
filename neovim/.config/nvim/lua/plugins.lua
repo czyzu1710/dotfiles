@@ -53,6 +53,10 @@ return require('packer').startup(function()
  end)
 
   use { 'mickael-menu/zk-nvim' }
-  use { 'feline-nvim/feline.nvim', branch = '0.5-compat' }
 
-  use { 'nvim-tree/nvim-web-devicons' }
+  use { 'feline-nvim/feline.nvim',
+    branch = '0.5-compat',
+    requires = {
+      { 'nvim-tree/nvim-web-devicons' },
+    },
+  }
