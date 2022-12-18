@@ -13,6 +13,7 @@ require'nvim-treesitter.configs'.setup {
     'html',
     'json',
     'bibtex',
+    'nix',
   },
 
   sync_install = false,
