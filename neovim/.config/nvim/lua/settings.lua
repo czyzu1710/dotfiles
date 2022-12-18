@@ -20,7 +20,7 @@ opt.colorcolumn = '120'
 opt.number = true
 opt.relativenumber = true
 
-vim.g['catppuccin_flavour'] = 'mocha'
+vim.g['catppuccin_flavour'] = 'frappe'
 require('catppuccin').setup()
 
 vim.cmd [[colorscheme catppuccin]]
