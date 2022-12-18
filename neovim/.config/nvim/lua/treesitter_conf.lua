@@ -5,6 +5,7 @@ require'nvim-treesitter.configs'.setup {
     'kotlin',
     'java',
     'markdown',
+    'markdown_inline',
     'yaml',
     'sql',
     'javascript',
