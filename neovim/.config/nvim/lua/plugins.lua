@@ -56,4 +56,11 @@ return require('packer').startup(function()
       { 'nvim-tree/nvim-web-devicons' },
     },
   }
+
+  use({ 'jakewvincent/mkdnflow.nvim',
+    rocks = 'luautf8', -- Ensures optional luautf8 dependency is installed
+    config = function()
+      require('mkdnflow').setup({})
+    end
+  })
 end)
