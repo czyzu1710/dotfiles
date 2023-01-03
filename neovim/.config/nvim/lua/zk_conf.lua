@@ -23,4 +23,4 @@ require("zk").setup({
 
 local opts = { noremap = trie, silent = false }
 
-vim.api.nvim_set_keymap("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title:  '), template = 'template.md' }<CR>", opts)
+vim.api.nvim_set_keymap("n", "<leader>zn", "<Cmd>ZkNew { title = vim.fn.input('Title: ') }<CR>", opts)
