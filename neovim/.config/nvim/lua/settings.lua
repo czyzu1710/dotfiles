@@ -16,7 +16,7 @@ opt.softtabstop = 2
 opt.expandtab = true
 opt.autoindent = true
 opt.colorcolumn = '120'
-opt.conceallevel = 2
+opt.conceallevel = 3
 
 opt.number = true
 opt.relativenumber = true
