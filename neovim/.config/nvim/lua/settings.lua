@@ -21,6 +21,8 @@ opt.conceallevel = 3
 opt.number = true
 opt.relativenumber = true
 
+opt.clipboard = 'unnamedplus'
+
 vim.g['catppuccin_flavour'] = 'frappe'
 require('catppuccin').setup()
 
