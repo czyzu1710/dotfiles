@@ -8,7 +8,6 @@ local ctrl = "Control"
 local alt = "Mod1"
 
 local hotkeys_popup = require("awful.hotkeys_popup")
-local keys = {}
 
 local globalkeys = gears.table.join(
 
@@ -391,7 +390,9 @@ for i = 1, 9 do
   )
 end
 
-keys.globalkeys = globalkeys
-keys.clientkeys = clientkeys
+keys = {
+  globalkeys = globalkeys,
+  clientkeys = clientkeys,
+}
 
 return keys
