@@ -49,13 +49,6 @@ return require('packer').startup(function()
 
   }
 
-  use({ 'jakewvincent/mkdnflow.nvim',
-    rocks = 'luautf8', -- Ensures optional luautf8 dependency is installed
-    config = function()
-      require('mkdnflow').setup({})
-    end
-  })
-
   use {
     "nvim-neorg/neorg",
     config = function()
