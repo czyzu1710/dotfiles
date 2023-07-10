@@ -60,17 +60,21 @@ return require('packer').startup(function()
       require('neorg').setup {
         load = {
           ["core.defaults"] = {}, -- Loads default behaviour
-          ["core.norg.concealer"] = {}, -- Adds pretty icons to your documents
-          ["core.norg.dirman"] = { -- Manages Neorg workspaces
+          ["core.concealer"] = {}, -- Adds pretty icons to your documents
+          ["core.summary"] = {},
+          ["core.dirman"] = {
             config = {
               workspaces = {
-                notes = "~/notes",
+                main = "/home/michalczyz/notes",
               },
-              default_workspace = "~/notes"
+              index = "index.norg", -- The name of the main (root) .norg file
+              default_workspace = "main",
             },
           },
-          ["core.norg.completion"] = {
-            engine = "nvim-cmp"
+          ["core.completion"] = {
+            config = {
+              engine = "nvim-cmp"
+            },
           },
         },
       }
