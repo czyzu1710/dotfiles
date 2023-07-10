@@ -4,11 +4,14 @@ local extra_opts = {noremap = true, expr = true, silent = true}
 
 keymap("i", "jk","<ESC>", default_options)
 keymap("t", "jk","C-\\><C-n>", default_options)
-keymap("n", "<leader>v", ':CHADopen<CR>', default_options)
-keymap("n", "<v", ':CHADopen --always-focus<CR>', default_options)
 keymap("n", "<a-l>", ':tabnext<CR>', default_options)
 keymap("n", "<a-h>", ':tabprevious<CR>', default_options)
 keymap("n", "<a-f>", ':Telescope find_files hidden=true<CR>', default_options)
 keymap("n", "<a-F>", ':Telescope live_grep<CR>', default_options)
 keymap("n", "<leader>za", ':TZAtaraxis<CR>', default_options)
 keymap("n", "<C-s>", ':write<CR>', default_options)
+
+-- NvimTree mappings
+keymap("n", "<A-p>", ":NvimTreeFocus<CR>", default_options)
+keymap("n", "<A-P>", ":NvimTreeClose<CR>", default_options)
+

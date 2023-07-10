@@ -27,6 +27,8 @@ vim.g['catppuccin_flavour'] = 'frappe'
 require('catppuccin').setup()
 
 vim.cmd [[colorscheme catppuccin]]
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 local lsp = require('lsp-zero')
 
@@ -48,3 +50,6 @@ lsp.setup_nvim_cmp {
 }
 
 lsp.setup()
+
+require("nvim-tree").setup()
+

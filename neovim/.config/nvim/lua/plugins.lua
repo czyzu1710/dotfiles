@@ -1,12 +1,11 @@
 return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
+
   use {
-    'ms-jpq/chadtree',
-    branch = 'chad',
-    run = {
-      ':CHADdeps',
-      'python3 -m chadtree deps'
-    }
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional
+    },
   }
   use { 'catppuccin/nvim', as = 'catppucin' }
   use {
