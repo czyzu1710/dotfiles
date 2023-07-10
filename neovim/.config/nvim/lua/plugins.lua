@@ -7,6 +7,9 @@ return require('packer').startup(function()
       'nvim-tree/nvim-web-devicons', -- optional
     },
   }
+
+  use 'romgrk/barbar.nvim'
+
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
