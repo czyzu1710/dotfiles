@@ -16,6 +16,9 @@ keymap("n", "<A-p>", ":NvimTreeFocus<CR>", default_options)
 keymap("n", "<A-P>", ":NvimTreeClose<CR>", default_options)
 
 
+-- LSP mappings
+keymap("n", "<leader>f", ":LspZeroFormat<CR>", default_options)
+
 -- Barbar mappings
 keymap("n", "<A-,>", ":BufferPrevious<CR>", default_options)
 keymap("n", "<A-.>", ":BufferNext<CR>", default_options)
