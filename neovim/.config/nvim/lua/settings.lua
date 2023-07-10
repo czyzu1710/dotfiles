@@ -35,7 +35,7 @@ lsp.set_preferences({
   suggest_lsp_servers = false
 })
 
-lsp.setup_servers({ 'kotlin_language_server', 'sumneko_lua', 'zk', 'java_language_server', 'yamlls', force = true })
+lsp.setup_servers({ 'kotlin_language_server', 'lua_ls', 'java_language_server', 'yamlls', force = true })
 
 lsp.setup_nvim_cmp {
   sources = {
