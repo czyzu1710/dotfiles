@@ -48,7 +48,6 @@ return require('packer').startup(function()
     }
   }
 
-  use { 'mickael-menu/zk-nvim' }
 
   use { 'feline-nvim/feline.nvim',
     branch = '0.5-compat',

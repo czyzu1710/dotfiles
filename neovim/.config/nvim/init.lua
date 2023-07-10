@@ -4,6 +4,4 @@ require('mappings')
 require('treesitter_conf')
 require('true-zen_conf')
 require('telescope_conf')
-
-require("zk_conf")
 require("feline_conf")
