@@ -48,12 +48,6 @@ return require('packer').startup(function()
     }
   }
 
-
-  use { 'feline-nvim/feline.nvim',
-    branch = '0.5-compat',
-    requires = {
-      { 'nvim-tree/nvim-web-devicons' },
-    },
   }
 
   use({ 'jakewvincent/mkdnflow.nvim',
