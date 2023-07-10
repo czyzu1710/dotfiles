@@ -23,10 +23,8 @@ opt.relativenumber = true
 
 opt.clipboard = 'unnamedplus'
 
-vim.g['catppuccin_flavour'] = 'frappe'
-require('catppuccin').setup()
+opt.termguicolors = true
 
-vim.cmd [[colorscheme catppuccin]]
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
@@ -50,6 +48,8 @@ lsp.setup_nvim_cmp {
 }
 
 lsp.setup()
+
+require("kanagawa").load("wave")
 
 require("nvim-tree").setup()
 

@@ -7,7 +7,6 @@ return require('packer').startup(function()
       'nvim-tree/nvim-web-devicons', -- optional
     },
   }
-  use { 'catppuccin/nvim', as = 'catppucin' }
   use {
     'nvim-telescope/telescope.nvim',
     tag = '0.1.0',
@@ -73,4 +72,7 @@ return require('packer').startup(function()
     run = ":Neorg sync-parsers",
     requires = "nvim-lua/plenary.nvim",
   }
+
+  use 'rebelot/kanagawa.nvim'
+
 end)
