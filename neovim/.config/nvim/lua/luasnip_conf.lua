@@ -1,8 +1,5 @@
 local set_keymap = vim.keymap.set
-local augroup = vim.api.nvim_create_augroup
-local autocmd = vim.api.nvim_create_autocmd
 local luasnip = require('luasnip')
-local types = require('luasnip.util.types')
 local options = { expr = true, silent = true, noremap = true }
 
 require('luasnip.loaders.from_vscode').lazy_load()
