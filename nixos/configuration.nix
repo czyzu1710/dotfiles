@@ -3,16 +3,12 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
- 
-let 
-  nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {};
+{
 
-in {
-  imports =
+ imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       <home-manager/nixos>
-      nur.repos.kira-bruneau.modules.lightdm-webkit2-greeter
     ];
 
   # Bootloader.
@@ -73,13 +69,6 @@ in {
     displayManager = {
         lightdm = {
 	  enable = true;
-	  greeters.webkit2 = {
-		enable = true;
-		webkitTheme =  fetchTarball {
-            		url = "https://github.com/Litarvan/lightdm-webkit-theme-litarvan/releases/download/v3.2.0/lightdm-webkit-theme-litarvan-3.2.0-nixos.tar.gz";
-            		sha256 = "10j7vg11mhs0mhl9r4j01zfq8naszkdhanxf84b02m1irz063wsd";
-          		};
-	  };
       	};
 	defaultSession = "none+awesome";
     };
@@ -92,10 +81,11 @@ in {
 	];
     };
   };
+
   # Configure console keymap
   console.keyMap = "pl2";
-	
-  users.defaultUserShell = pkgs.zsh;
+
+  programs.zsh.enable = true;	
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.michalczyz = {
@@ -103,6 +93,7 @@ in {
     description = "Michał Czyż";
     extraGroups = [ "networkmanager" "wheel" "audio" "docker" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
 
 
@@ -124,7 +115,7 @@ in {
      gcc
      tree-sitter
      nodejs
-     jetbrains.idea-ultimate
+     jetbrains.idea-community
      temurin-bin
      kotlin
      kotlin-language-server
@@ -157,6 +148,24 @@ in {
      zathura
      ranger
      spotify
+     picom-next
+     xclip
+     bash
+     micromamba
+     pciutils
+     glxinfo
+     vlc
+     bookworm
+     raven-reader
+     anki
+     flameshot
+     gradle
+     tor-browser-bundle-bin
+     udiskie
+     python311Packages.python-lsp-server
+     vscodium
+     okular
+     clojure
   ];
 
 
@@ -169,7 +178,7 @@ in {
   ];
 
   home-manager.users.michalczyz = { pkgs, ... }: {
-  home.stateVersion = "22.11";
+  home.stateVersion = "23.05";
   home.homeDirectory = "/home/michalczyz";
   programs.zsh = {
     enable = true;
@@ -209,7 +218,7 @@ in {
 	'Fira Code',
 	},
 
-	color_scheme = "Catppuccin Mocha",
+	color_scheme = "kanagawabones",
 
 	}	
   '';
@@ -223,6 +232,11 @@ in {
 	source = /home/michalczyz/Documents/dotfiles/neovim/.config/nvim;
 	recursive = true;
  };
+  
+  home.file.".config/picom/picom.conf" = {
+	source = /home/michalczyz/Documents/dotfiles/picom/.config/picom.conf;
+	recursive = true;
+  };
 
   xdg.userDirs = {
   	enable = true;
@@ -256,6 +270,8 @@ in {
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.11"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
+  system.autoUpgrade.enable = true;
+  system.autoUpgrade.allowReboot = true;
 
 }
