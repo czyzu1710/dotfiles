@@ -12,40 +12,14 @@ local wibox = require("wibox")
 -- Theme handling library
 local beautiful = require("beautiful")
 -- Notification library
-local naughty = require("naughty")
 local menubar = require("menubar")
-local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 local rules = require('rules')
 require("signals")
 local helpers = require("helpers")
-
--- {{{ Error handling
--- Check if awesome encountered an error during startup and fell back to
--- another config (This code will only ever execute for the fallback config)
-if awesome.startup_errors then
-  naughty.notify({ preset = naughty.config.presets.critical,
-    title = "Oops, there were errors during startup!",
-    text = awesome.startup_errors })
-end
-
--- Handle runtime errors after startup
-do
-  local in_error = false
-  awesome.connect_signal("debug::error", function(err)
-    -- Make sure we don't go into an endless error loop
-    if in_error then return end
-    in_error = true
-
-    naughty.notify({ preset = naughty.config.presets.critical,
-      title = "Oops, an error happened!",
-      text = tostring(err) })
-    in_error = false
-  end)
-end
--- }}}
+require("error_handling")
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
@@ -135,7 +109,7 @@ awful.screen.connect_for_each_screen(function(s)
   helpers.set_wallpaper(s)
 
   -- Each screen has its own tag table.
-  awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+  awful.tag({ "1", "2", "3", "4", "5"}, s, awful.layout.layouts[1])
 
   -- Create a promptbox for each screen
   s.mypromptbox = awful.widget.prompt()
